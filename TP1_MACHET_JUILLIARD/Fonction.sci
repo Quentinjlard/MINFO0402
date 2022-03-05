@@ -1,32 +1,29 @@
-function X = RESOUINF(A,b,n)
+function X=RESOUINF(A,b,n)
 // Description of RESOUINF(A,b,n)
 // RESOUINF permet d'afficher uniquement les valeurs inférieur de la matrice
 // les valeurs situé dans le triange supérieur sont remplacer par 0
 
-X = zeros(n,n) // Création d'une matrice carré de n x n remplie de 0
-
-for i = 1 : n // Par cours la totalité de la ligne
-    for j = 1 : i // Parcours uniquement la ligne de i et s'arrete quand i = j
-        X(i,j) = A(i,j) //Affectation des valeur de A(i,j) dans X(i,j)
+X(1)=b(1)/A(1,1) // Création d'une matrice carré de n x n remplie de 0
+    for i = 2:n // Parcours la totalité de la ligne
+        Aux=0
+        for j = 1 : i-1 // Parcours uniquement la ligne de i et s'arrete quand i = j
+            Aux=Aux + A(i,j) * X(j)
+        end
+        X(i)=(b(i)-Aux)/A(i,i)
     end
-end
-//disp(X)
-
 endfunction
 
-function X = RESOUSUP(A,b,n)
+function X=RESOUSUP(A,b,n)
 // Description of RESOUSUP(A,b,n)
 // RESOUSUP permet d'afficher uniquement les valeurs supérieur de la matrice
-// les valeurs situé dans le triange inférieur sont remplacer par 0
-    
-X = zeros(n,n)
-k = 1
-for i = 1 : n
-    for j = i : n 
-        X(i,j) = A(i,j)
+// les valeurs situé dans le triange inférieur sont remplacer par 0.
+
+    X(n)=b(n)/A(n,n)
+    for i=n-1 : - 1 :1
+        Aux=0
+        for k = i+1 : n
+            Aux=Aux + A(i,k) * X(k)
+        end
+        X(i)=(b(i)-Aux)/A(i,i)
     end
-end
-    
-//disp(X)
-    
 endfunction

@@ -1,3 +1,6 @@
+pathname=get_absolute_file_path("LanceurExercice4.sce")
+exec(pathname+'\Fonction.sci',-1);
+
 // Initialisation varaible globale du programme
 min = 5
 max = 20
