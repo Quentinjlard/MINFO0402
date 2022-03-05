@@ -1,0 +1,13 @@
+Liste des fichiers:
+
+- A_JUILLIARD_Quentin : Nom et prénom d'un membre du binôme
+- A_MACHET_Corentin : Nom et prénom de l'autre membre du binôme
+- ALIRE : Détaille tous les fichiers et leurs utilités
+
+- Exercice4 : Fichier permettant de lancer les scripts SCE liée à l'exercice 4 du TP1
+- RESOUINF : Fichier de fonction SCI permettant de réaliser la résolution inférieur d'une matrice inversible 
+- RESOUSUP : Fichier de fonction SCI permettant de réaliser la résolution supérieur d'une matrice inversible
+
+- Exercice5 : Fichier permettant de lancer les scripts SCE liée à l'exercice 5 du TP1
+- REDUC : 
+- GAUSS : 
