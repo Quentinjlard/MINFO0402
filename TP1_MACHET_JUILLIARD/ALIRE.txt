@@ -4,6 +4,6 @@ Liste des fichiers:
 - A_MACHET_Corentin : Nom et prénom de l'autre membre du binôme
 - ALIRE : Détaille tous les fichiers et leurs utilités
 
-- Fonction : 
-- LanceurExercice4 : 
-- LanceurExercice5 :
+- Fonction : Regroupe l'ensemble des focntions utiles pour l'execution des programmes
+- LanceurExercice4 : Permet l'execution des focntions à partir de méthode aléatoire
+- LanceurExercice5 : Permet l'execution des focntions à partir de méthode aléatoire
