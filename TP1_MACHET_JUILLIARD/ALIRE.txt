@@ -4,14 +4,9 @@ Liste des fichiers:
 - A_MACHET_CORENTIN.txt : Nom, prénom d'un membre du binôme (2)
 - ALIRE.txt : Détail des fichiers du répertoire
 
-<<<<<<< HEAD
 - Fonction.sci : Ensemble des fonctions à réaliser pour ce TP
 - Exercice4.sce : Script de test pour l'exercice 4
 - Exercice5.sce : Script de test pour l'exercice 5
 
 - CR_MACHET_JUILLIARD.pdf : Rapport du TP au format PDF
-=======
-- Fonction : Regroupe l'ensemble des focntions utiles pour l'execution des programmes
-- LanceurExercice4 : Permet l'execution des focntions à partir de méthode aléatoire
-- LanceurExercice5 : Permet l'execution des focntions à partir de méthode aléatoire
->>>>>>> 3f38f896ddc70bf23b1286df7af64239e3a37232
+
