@@ -1,30 +1,38 @@
-// Decalaration principale
-pathname=get_absolute_file_path("Exercice5.sce")
+// Chargement des fonctions nécessaires
+pathname = get_absolute_file_path("Exercice5.sce");
 exec(pathname+'\Fonction.sci',-1);
 
-// Initialisation varaible globale du programme
-min = 5
-max = 20
+// Initialisation des variables globales
+min = 5;
+max = 20;
+n = round(rand()*(max - min + 1)) + min // min <= n <= max
 
-// Tirage aléatoire pour n entre min et le max
-n = (rand()* (max - min + 1)) + min
+// Création des matrices...
+A1_SUP = [2,3,4; 0,1,1; 0,0,5] // matrice triangulaire supérieure inversible 3,3
+A1 =  [1,1,2; 1,2,1; -5,-8,-8] // matrice inversible 3,3
+A2 = zeros(n,n);
+for i = 1:n
+    for j = 1:n
+        A2(i,j) = round(rand()*50)+1;
+    end
+end
 
-// Création de la matrice par initalisation aléatoire
-A1 = round(100*rand(n,n))
-A2 =  [1,1,2; 1,2,1; -5,-8,-8]
+// ... et des vecteurs colonnes associés
+b1 = [1;1;1]
+b2 = round(100*rand(n,1));
 
-// Création du vecteur colonne
-b2 = round(100*rand(n,1))
-b2 = [1,1,1]
+// Affichage des matrices aléatoires
+disp(A2);
+disp(b2);
 
-//Appel de la fonction REDUC avec en parametres A,b,n
-REDUC(A1,b1,n)
+// FONCTION REDUC(A,b,n)
 
-//Appel de la fonction GAUSS avec en parametres A,b,n
-GAUSS(A1,b1,n)
+REDUC(A1_SUP,b1,3) // reponse triviale = A1_SUP, b1
+REDUC(A1,b1,3)
+REDUC(A2,b2,n)
 
-//Appel de la fonction REDUC avec en parametres A,b,n
-REDUC(A2,b2,3)
-
-//Appel de la fonction GAUSS avec en parametres A,b,n
-GAUSS(A2,b2,3)
+// FONCTION GAUSS(A,b,n)
+X = GAUSS(A1,b1,3)
+A1*X' // résultat attendu = b1
+X2 = GAUSS(A2,b2,n)
+A2*X2' // résultat attendu = b2
