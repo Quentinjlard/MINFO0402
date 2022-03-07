@@ -1,5 +1,5 @@
 // Decalaration principale
-pathname=get_absolute_file_path("LanceurExercice5.sce")
+pathname=get_absolute_file_path("Exercice5.sce")
 exec(pathname+'\Fonction.sci',-1);
 
 // Initialisation varaible globale du programme
