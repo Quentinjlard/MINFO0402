@@ -10,13 +10,21 @@ max = 20
 n = (rand()* (max - min + 1)) + min
 
 // Création de la matrice par initalisation aléatoire
-A = round(100*rand(n,n))
+A1 = round(100*rand(n,n))
+A2 =  [1,1,2; 1,2,1; -5,-8,-8]
 
 // Création du vecteur colonne
-b = round(100*rand(n,1))
+b2 = round(100*rand(n,1))
+b2 = [1,1,1]
 
 //Appel de la fonction REDUC avec en parametres A,b,n
-REDUC(A,b,n)
+REDUC(A1,b1,n)
 
 //Appel de la fonction GAUSS avec en parametres A,b,n
-GAUSS(A,b,n)
+GAUSS(A1,b1,n)
+
+//Appel de la fonction REDUC avec en parametres A,b,n
+REDUC(A2,b2,3)
+
+//Appel de la fonction GAUSS avec en parametres A,b,n
+GAUSS(A2,b2,3)
