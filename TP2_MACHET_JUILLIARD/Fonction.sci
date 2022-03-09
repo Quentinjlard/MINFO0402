@@ -22,3 +22,12 @@ function X = RESOUTRI(A,B,C,D,n)
         X(i) = E(i)*X(i+1)+F(i)
     end
 endfunction
+
+function Y = PRODMATTRI(A,B,C,X,n)
+    Y = zeros(n,1)
+    Y(1) = B(1)*X(1) + C(1)*X(2)
+    for i = 2:n-1
+        Y(i) = A(i)*X(i-1) + B(i)*X(i) + C(i)*X(i+1)
+    end
+    Y(n) = A(n)*X(n-1) + B(n)*X(n)
+endfunction
