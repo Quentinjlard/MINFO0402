@@ -1,3 +1,6 @@
+pathname = get_absolute_file_path("Exercice1.sce");
+exec(pathname+'\Fonction.sci',-1);
+
 n= 10
 
 A = zeros(1,n);
@@ -40,3 +43,5 @@ for i = 1 : n
 end
 
 disp(M)
+
+RESOUTRI(A,B,C,D,n)
