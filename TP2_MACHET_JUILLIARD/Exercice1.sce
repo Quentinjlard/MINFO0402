@@ -44,4 +44,6 @@ end
 
 disp(M)
 
-RESOUTRI(A,B,C,D,n)
+X = RESOUTRI(A,B,C,D,n)
+
+PRODMATTRI(A,B,C,X,n)
