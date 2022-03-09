@@ -3,16 +3,19 @@ n= 10
 A = zeros(1,n);
 B = zeros(1,n);
 C = zeros(1,n);
+D = zeros(1,n);
 
 for i = 1 : n
     A(i) = -1;
     B(i) = 2;
     C(i) = -1;
+    D(i) = 1;
 end
 
 disp(A)
 disp(B)
 disp(C)
+disp(D)
 
 M =  zeros(n,n);
 
