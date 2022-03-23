@@ -5,8 +5,8 @@ Liste des fichiers:
 - ALIRE.txt : Détail des fichiers du répertoire
 
 - Fonction.sci : Ensemble des fonctions à réaliser pour ce TP
-- Exercice1.sce : Script de test pour l'exercice 1
+- Exercice1.sce : Script de test pour l'exercice 1 (et 6 du TP1)
 - Exercice2.sce : Script de test pour l'exercice 2
 - Exercice3.sce : Script de test pour l'exercice 3
 
-- CR_MACHET_JUILLIARD.pdf : Rapport du TP au format PDF
+- CR2_MACHET_JUILLIARD.pdf : Rapport du TP2 au format PDF
