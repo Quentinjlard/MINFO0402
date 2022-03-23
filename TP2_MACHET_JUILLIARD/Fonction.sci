@@ -1,3 +1,5 @@
+// Exercice 1
+
 function res = calcE(a,b,c,e)
     res = -c/(a*e+b)
 endfunction
@@ -30,4 +32,24 @@ function Y = PRODMATTRI(A,B,C,X,n)
         Y(i) = A(i)*X(i-1) + B(i)*X(i) + C(i)*X(i+1)
     end
     Y(n) = A(n)*X(n-1) + B(n)*X(n)
+endfunction
+
+// Exercice 2
+
+// Exercice 3
+
+function y = Ua(t)
+    y = t*sin(7*%pi*t)
+endfunction
+
+function y = Ub(t)
+    y = (t-t^2)*(2+sin(9*%pi*t))
+endfunction
+
+function y = Fa(t)
+    y = 49*(%pi^2)*t*sin(7*%pi*t) - 14*%pi*cos(7*%pi*t)
+endfunction
+
+function y = Fb(t)
+    y = 4 + 2*sin(9*%pi*t) + (2*t-1)*18*%pi*cos(9*%pi*t) + (t-t^2)*((9*%pi)^2)*sin(9*%pi*t)
 endfunction
