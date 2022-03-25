@@ -57,7 +57,7 @@ endfunction
 // La définition de ces 4 fonctions est donnée dans le tableau de l'énoncé. Elles sont exprimées en fonction du temps t
 
 function y = Ua(t)
-    y = t*sin(7*%pi*t)
+    y = t*sin(7*(%pi)*t)
 endfunction
 
 function y = Ub(t)
