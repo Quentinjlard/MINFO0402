@@ -48,8 +48,25 @@ endfunction
 // Exercice 2
 
 // Résolution matrice inverse (en supposant que A est inversible), grace à la méthode magique Gauss-Jordan
-function X = MAGIQUE(A)
-    //
+function X = MAGIQUE(A,n)
+    X = eye(n,n) // init X une matrice identité de taille n
+    for k = 1:n // k est l'index du pivot
+        for i = 1:n // i est l'indice des lignes
+            if i <> k // on traite chaque ligne sauf celle du pivot
+                tmp = A(i,k)/A(k,k) // on garde temporairement le facteur pour ne pas le perdre à mesure que l'on modifie les valeurs de la matrice A
+                for j = 1:n // j est l'indice des colonnes
+                    A(i,j) = A(i,j) - A(k,j)*tmp
+                    X(i,j) = X(i,j) - X(k,j)*tmp
+                end
+                disp([A,X]) // on affiche la grande matrice (n,2n)
+            end
+        end
+    end
+    for i = 1:n
+        for j = 1:n
+            X(i,j) = X(i,j)/A(i,i) // enfin on divise les lignes par les coef qu'il reste dans la matrice de gauche pour obtenir la matrice identité à gauche et la matrice inverse à droite
+        end
+    end
 endfunction
 
 // Exercice 3
