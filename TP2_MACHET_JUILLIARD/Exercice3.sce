@@ -1,3 +1,9 @@
+// TP2_MINF0402_MACHET_JUILLIARD
+// MACHET Corentin
+// JUILLIARD QUENTIN
+// Exercice 3
+
+
 pathname = get_absolute_file_path("Exercice3.sce");
 exec(pathname+'\Fonction.sci',-1);
 
@@ -61,5 +67,16 @@ end
 
 X = RESOUTRI(A,B,C,D,N);
 
-Ti
-Yi
+min = 1;
+max = N;
+i = round(rand()*(max - min + 1)) + min // min <= i <= max
+
+lT=zeros(i);
+lD=zeros(i);
+
+for j = 1 : N
+    lT[j] = i*h;
+    lD[j] = h*h*lT[j];
+end    
+
+

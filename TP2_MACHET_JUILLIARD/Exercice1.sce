@@ -1,3 +1,8 @@
+// TP2_MINF0402_MACHET_JUILLIARD
+// MACHET Corentin
+// JUILLIARD QUENTIN
+// Exercice 1
+
 pathname = get_absolute_file_path("Exercice1.sce");
 exec(pathname+'\Fonction.sci',-1);
 
