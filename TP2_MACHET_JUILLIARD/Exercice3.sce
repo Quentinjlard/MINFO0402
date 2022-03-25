@@ -78,5 +78,3 @@ for j = 1 : N
     lT[j] = i*h;
     lD[j] = h*h*lT[j];
 end    
-
-
