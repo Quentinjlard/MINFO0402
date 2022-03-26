@@ -11,20 +11,21 @@ exec(pathname+'\Fonction.sci',-1);
 n = 2000;
 min = 0;
 max = 1;
-lt = linspace(min,max,n);
-ly = zeros(length(lt));
+lt = linspace(min,max,n); // liste des t, ie 2000 valeurs sur l'intervalle [0,1]
+// Remarque : lt correspond aux valeurs en abscisse
+ly = zeros(length(lt)); // on prépare une liste vide de même taille pour les valeurs en ordonnée
 
 // ETAPE 1, les fonctions Ua et Fa
 
-for N = 10:10:50
+for N = 10:10:50 // N = 10, 20, 30, 40, 50
     // Question 1 :
     // Affichage de Ua(t)
-    clf();
+    clf(); // ouvre et/ou nettoie une fenetre graphique
     for i = 1 : length(lt)
-        ly(i)=Ua(lt(i));
+        ly(i)=Ua(lt(i)); // on calcul pour chaque t, son image en fonction de Ua
     end
-    plot(lt,ly)
-    sleep(2000);
+    plot(lt,ly) // on affiche ts les points (ti, yi)
+    sleep(000); // attendre 1s
     
     // Question 2 :
     h = 1/(N+1)
@@ -37,16 +38,17 @@ for N = 10:10:50
         A(i) = -1;
         B(i) = 2;
         C(i) = -1;
-        T(i) = i*h;
-        Da(i) = (h^2)*Fa(T(i));
+        T(i) = i*h; // formule de l'énoncé
+        Da(i) = (h^2)*Fa(T(i)); // idem
     end
     // Affichage de la solution de MX=D
     Y = RESOUTRI(A,B,C,Da,N);
-    plot(T,Y,'r+')
-    sleep(6000);
+    plot(T,Y,'r+') // on affiche ts les points (Ti, Yi) en + rouge
+    sleep(6000); // attendre 6s
 end
 
 // ETAPE 2, les fonctions Ub et Fb
+// le commentaire du code est le même qu'à l'étape 1
 
 for N = 10:10:50
     // Question 1 :
@@ -56,7 +58,7 @@ for N = 10:10:50
         ly(i)=Ub(lt(i));
     end
     plot(lt,ly)
-    sleep(2000);
+    sleep(1000);
     
     // Question 2 :
     h = 1/(N+1)
