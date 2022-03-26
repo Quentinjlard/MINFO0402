@@ -3,78 +3,77 @@
 // JUILLIARD QUENTIN
 // Exercice 3
 
-
 pathname = get_absolute_file_path("Exercice3.sce");
 exec(pathname+'\Fonction.sci',-1);
 
-// t*sin(7*%pi*t)
-clf;
-NN=2000;
-lt=linspace(0,1,NN);
-ly=zeros(length(lt));
-for i = 1 : length(lt)
-    ly(i)=Ua(lt(i));
-end
-plot(lt,ly)
+// INITIALISATION
 
-// (t-t^2)*(2+sin(9*%pi*t))
-clf;
-NN=2000;
-lt=linspace(0,1,NN);
-ly=zeros(length(lt));
-for i = 1 : length(lt)
-    ly(i)=Ub(lt(i));
-end
-plot(lt,ly)
+n = 2000;
+min = 0;
+max = 1;
+lt = linspace(min,max,n);
+ly = zeros(length(lt));
 
-// 49*(%pi^2)*t*sin(7*%pi*t) - 14*%pi*cos(7*%pi*t)
-clf;
-NN=2000;
-lt=linspace(0,1,NN);
-ly=zeros(length(lt));
-for i = 1 : length(lt)
-    ly(i)=Fa(lt(i));
-end
-plot(lt,ly)
+// ETAPE 1, les fonctions Ua et Fa
 
-// 4 + 2*sin(9*%pi*t) + (2*t-1)*18*%pi*cos(9*%pi*t) + (t-t^2)*((9*%pi)^2)*sin(9*%pi*t)
-clf;
-NN=2000;
-lt=linspace(0,1,NN);
-ly=zeros(length(lt));
-for i = 1 : length(lt)
-    ly(i)=Fb(lt(i));
-end
-plot(lt,ly)
-
-//Faire matrice tridiagonale avec 2 (au milieu ) et -1 (sup et inf a 2)
-
-//
-N = 30;
-h = 1/(N+1);
-
-A = zeros(1,N);
-B = zeros(1,N);
-C = zeros(1,N);
-D = zeros(1,N);
-
-for j = 1 : N
-    A(j) = -1;
-    B(j) = 2;
-    C(j) = -1;
-    D(j) = 1;
+for N = 10:10:50
+    // Question 1 :
+    // Affichage de Ua(t)
+    clf();
+    for i = 1 : length(lt)
+        ly(i)=Ua(lt(i));
+    end
+    plot(lt,ly)
+    sleep(2000);
+    
+    // Question 2 :
+    h = 1/(N+1)
+    A = zeros(1,N);
+    B = zeros(1,N);
+    C = zeros(1,N);
+    Da = zeros(1,N);
+    T = zeros(N,1);
+    for i = 1:N
+        A(i) = -1;
+        B(i) = 2;
+        C(i) = -1;
+        T(i) = i*h;
+        Da(i) = (h^2)*Fa(T(i));
+    end
+    // Affichage de la solution de MX=D
+    Y = RESOUTRI(A,B,C,Da,N);
+    plot(T,Y,'r+')
+    sleep(6000);
 end
 
-X = RESOUTRI(A,B,C,D,N);
+// ETAPE 2, les fonctions Ub et Fb
 
-min = 1;
-max = N;
-i = round(rand()*(max - min + 1)) + min // min <= i <= max
-
-lT=zeros(i);
-lD=zeros(i);
-
-for j = 1 : N
-    lT[j] = i*h;
-    lD[j] = h*h*lT[j];
-end    
+for N = 10:10:50
+    // Question 1 :
+    // Affichage de Ub(t)
+    clf();
+    for i = 1 : length(lt)
+        ly(i)=Ub(lt(i));
+    end
+    plot(lt,ly)
+    sleep(2000);
+    
+    // Question 2 :
+    h = 1/(N+1)
+    A = zeros(1,N);
+    B = zeros(1,N);
+    C = zeros(1,N);
+    Db = zeros(1,N);
+    T = zeros(N,1);
+    for i = 1:N
+        A(i) = -1;
+        B(i) = 2;
+        C(i) = -1;
+        T(i) = i*h;
+        Db(i) = (h^2)*Fb(T(i));
+    end
+    // Affichage de la solution de MX=D
+    Y = RESOUTRI(A,B,C,Db,N);
+    plot(T,Y,'r+')
+    sleep(6000);
+end

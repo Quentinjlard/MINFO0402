@@ -6,25 +6,21 @@
 pathname = get_absolute_file_path("Exercice2.sce");
 exec(pathname+'\Fonction.sci',-1);
 
-//n est le nombre de colonne(s) et de ligne(s) de la matrice
-n=5;
-//La borne supérieure des nombres aléatoires pour la matrice
-max=10;
-//La borne inférieure des nombres aléatoires pour la matrice
-min=0;
+n = 5; // taille de la matrice
+min = 0; // borne inférieure de l'intervalle de valeurs aléatoires
+max = 10; // borne supérieure de l'intervalle de valeurs aléatoires
 
-//Création de la matrice colonne avec des nombres aléatoires
-A=rand(n, n)*(max-min)+min
-//Appel de la fonction MAGIQUE qui calcul les matrices colonne A et B
-C=MAGIQUE(A, n);
+// Matrice carrée initiale
+A = rand(n, n)*(max-min)+min
 
-//Arrondir les valeurs au millième
-C=round(1000*C)/1000;
-//Affichage de la matrice C
-disp(C)
-//Calcul de l'inverse de A
+// Calcul de l'inverse de A
+C = MAGIQUE(A,n);
+
+// Affichage de C arrondi au millième
+disp(round(1000*C)/1000)
+
+// Calcul de l'inverse de A par scilab
 A=inv(A);
-//Arrondir les valeurs au millième
-A=round(1000*A)/1000;
-//Vérification
-disp(A)
+
+// Comparaison des résultats obtenus
+disp(round(1000*A)/1000)
